@@ -1,48 +1,84 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="game.js">
-    <link rel="stylesheet" href="reset.css">
-    <link rel="stylesheet" href="style.css">
-
-    <title>Crystal Game</title>
+	<meta charset="UTF-8">
+	<title>Crystals Collector Game</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 </head>
+
 <body>
-    <div Class = "continer-fluid">
-        <div class="row">
-            <div class = "col-3"></div>
-            <div class = "col-6 text-center"> Crystal Game</div>
-            <div class = "col-3"></div>
-        </div>
-        
-        <div class="row">
-            <br>
-        </div>
-
-        <div class = "row">
-            <div class = "col-3"></div>
-            <div class = "col-6 text-center">Game Info</div>
-            <div class = "col-3"></div>
-        </div>
-
-        <div class="row">
-            <br>
-        </div>
-        
-        <div class = "row">
-            <div class = "col-3"></div>
-            <ul class="col-6 list-group list-group-flush">
-                <li class = "list-group-item text-center">Score</li>
-                <li class = "list-group-item text-center">Wins: </li>
-                <li class = "list-group-item text-center">Losses: </li>
-            </ul>
-            <div class = "col-3"></div>
-        </div>
+    <div class="fullscreen-bg">
+        <video loop muted autoplay poster="../unit-4-game/assets/images/background-loop.mp4" class="fullscreen-bg__video">
+            <source src="../unit-4-game/assets/images/background-loop.mp4" type="video/mp4">
+        </video>
     </div>
-    
+
+
+	<div class="container ">
+		<div class= "header text-center">
+            <h1 class= "text-center" >CRYSTALS COLLECTOR</h1>
+        </div>
+        <div class="header text-center">
+            <h3>Tearget Number:</h3>
+                <h3 class = "text-center" id="targetNumber"></h3>
+        </div>
+
+		<div class="row">
+			<div class="col-lg-12 directions">
+				<p>Each crystal has a hidden value that will only be revealed when clicked. With each click, 
+                    you will add the crystal's value to your total score. 
+                    You will win the game if your total score matches the magic number, and 
+                    you will lose if your total score exceeds it. Good luck.</p>
+			</div>
+        </div>   
+             
+		<div class="row">
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
+				<img class="crystalimg img-responsive" id="crystal1RandomInt" src="assets/images/Diamond.svg" alt="Crystal 1"/>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
+				<img class="crystalimg img-responsive" id="crystal2RandomInt" src="assets//images/Emerald.svg" alt="Crystal 2"/>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
+				<img class="crystalimg img-responsive" id="crystal3RandomInt" src="assets/images/Ruby.svg" alt="Crystal 3"/>
+			</div>
+			<div class="col-xs-6 col-sm-6 col-md-3 col-lg-3 text-center">
+				<img class="crystalimg img-responsive" id="crystal4RandomInt" src="assets/images//Topaz.svg" alt="Crystal 4"/>
+			</div>
+		</div>
+
+
+
+		<div class="row text-center">
+			<div class="col-lg-4 total">
+				<p> TOTAL SCORE: <span id="totalScore"></span></p>
+				
+			</div>
+			<div class="col-lg-4 scores">
+				<p class="score">WINS: <span id="wins"></span></p> 
+            </div>
+            <div class="col-lg-4 scores">
+                <p class="score">LOSSES: <span id="losses"></span></p>
+            </div>
+        </div>
+        <div class="row-lg-12">
+            <div class="col-lg-12"></div>
+        </div>  
+        <div class= "row text-center">      
+                <div class="col-lg-4"></div>    
+                <div class="col-lg-4 button">
+                    <p id="winOrLose"></p>
+                    <button type="button" class="btn btn-light btn-lg">PLAY AGAIN</button>
+                </div>
+                <div class="col-lg-4"></div>
+            </div>
+        </div>
+	</div>
 </body>
 </html>
